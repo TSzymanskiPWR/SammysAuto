@@ -189,6 +189,37 @@ namespace SammysAuto.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("SammysAuto.Models.Car", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Color");
+
+                    b.Property<string>("Make")
+                        .IsRequired();
+
+                    b.Property<double>("Miles");
+
+                    b.Property<string>("Model")
+                        .IsRequired();
+
+                    b.Property<string>("Style");
+
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("VIN")
+                        .IsRequired();
+
+                    b.Property<int>("Year");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Cars");
+                });
+
             modelBuilder.Entity("SammysAuto.Models.ServiceType", b =>
                 {
                     b.Property<int>("Id")
@@ -245,6 +276,13 @@ namespace SammysAuto.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SammysAuto.Models.Car", b =>
+                {
+                    b.HasOne("SammysAuto.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

@@ -81,7 +81,9 @@
                     <img src="~/images/car.png" width="40"/> &nbsp; View Cars
                 </a>
             </td>
-            <td>EDIT | Delete | Details</td>
+            <td>
+                @Html.Partial("_TableButtonPartial", new IndividualButtonPartial { CustomerId = item.Id })
+            </td>
         </tr>
 }
 

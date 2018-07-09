@@ -16,7 +16,7 @@ namespace SammysAuto.Data
         }
 
         public DbSet<ServiceType> ServiceTypes { get; set; } //seting things in DB
-
+        public DbSet<Car> Cars { get; set; } //seting things in DB
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
