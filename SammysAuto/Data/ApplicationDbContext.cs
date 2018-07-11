@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore;
 using SammysAuto.Models;
 
 namespace SammysAuto.Data
@@ -17,6 +18,7 @@ namespace SammysAuto.Data
 
         public DbSet<ServiceType> ServiceTypes { get; set; } //seting things in DB
         public DbSet<Car> Cars { get; set; } //seting things in DB
+        public DbSet<Service> Services { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
